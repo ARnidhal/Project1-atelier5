@@ -1,0 +1,25 @@
+<table border="2">
+<tr>
+
+<td>Id</td>
+<td>username</td>
+<td>email</td>
+<td>Update</td>
+<td>delete</td>
+
+</tr>
+
+{%for a in author %}
+<tr>
+<td>{{a.id}}</td>
+<td>{{a.username}}</td>
+<td>{{a.email}}</td>
+<td><a href="{{path('editauthor',{'id':a.id})}}">edit</a></td>
+<td><a href="{{path('deleteauthor',{'id':a.id})}}">del</a></td>
+<td><a href="{{path('showidauthor',{'id':a.id})}}">show</a></td>
+
+</tr>
+{% endfor %}
+
+</table>
+<a href="{{ path('DD') }}">Delete authors whose number of books equals 0</a>

@@ -1,0 +1,20 @@
+<table border="2">
+<tr>
+
+<td>Id</td>
+<td>username</td>
+<td>email</td>
+
+
+</tr>
+
+{%for a in authors %}
+<tr>
+<td>{{a.id}}</td>
+<td>{{a.username}}</td>
+<td>{{a.email}}</td>
+
+</tr>
+{% endfor %}
+
+</table>

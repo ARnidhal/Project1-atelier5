@@ -1,0 +1,36 @@
+<h1>Book</h1>
+<div style="text-align:center">
+    <h1>list of Books</h1>
+ <table  class="center"  border="5" style="margin-left:auto;margin-right:auto">
+    <tr>
+        <td>Title</td>
+        <td>Publication Date</td>
+        <td>Published</td>
+        <td>Category</td>
+        <td>Author</td>
+       
+    </tr>
+    {% for a in book %}
+    <tr>
+   
+    <td>{{a.title}}</td>
+    <td>{{a.PublicationDate|date('Y-m-d')}}</td>
+    <td>{{a.published}}</td>
+    <td>{{a.category}}</td>
+    <td>{{a.authors.username}}</td>
+ 
+    
+    
+    </tr>
+    {% endfor %}
+    </table>
+   
+<table class="center" cellspacing="3" cellpadding="5">
+    <tr>
+    <td><a href="{{ path('addformbook') }}"><p style="text-align:center">Add Book    </p></a></td>
+    
+   
+</tr>
+</table>
+    
+</div>

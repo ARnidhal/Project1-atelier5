@@ -1,0 +1,49 @@
+
+
+<div style="text-align:center">
+    <h1>list of Books</h1>
+    {{form_start(f)}}
+{{form_label(f.ref)}}
+{{form_widget(f.ref)}}
+{{form_end(f)}}
+ <table  class="center"  border="5" style="margin-left:auto;margin-right:auto">
+    <tr>
+        <td>Title</td>
+        <td>Publication Date</td>
+        <td>Published</td>
+        <td>Category</td>
+        <td>Author</td>
+        <td>Actions</td>       
+    </tr>
+    {% for a in book %}
+    <tr>
+   
+    <td>{{a.title}}</td>
+    <td>{{a.PublicationDate|date('Y-m-d')}}</td>
+    <td>{{a.published}}</td>
+    <td>{{a.category}}</td>
+    <td>{{a.authors.username}}</td>
+    <td><a href="{{path('editbook',{'id':a.ref})}}">Edit</a>
+        <a href="{{path('deletebook',{'id':a.ref})}}">Delete</a>
+        <a href="{{path('showiidauthor',{'ref':a.ref})}}">Show</a>
+        
+    
+    
+    </tr>
+    {% endfor %}
+    </table>
+   
+<table class="center" cellspacing="3" cellpadding="5">
+    <tr>
+    <td><a href="{{ path('addformbook') }}"><p style="text-align:center">Add Book</p></a></td>
+    <td><a href="{{ path('book35') }}"><p style="text-align:center">Show Book before 2023</p></a></td>
+    <td><a href="{{ path('updateCategory') }}"><p style="text-align:center">updateCategoryRomance</p></a></td>
+    <td><a href="{{ path('updateCategory') }}"><p style="text-align:center">updateCategoryRomance</p></a></td>
+    <td><a href="{{ path('minmax') }}"><p style="text-align:center">shearch minmax</p></a></td>
+    <p style="text-align:center"> Total Number Of Science Fiction Books: {{nbr}}</p>
+   
+</tr>
+</table>
+<button><a href="{{ path('byauthor') }}">order by author</a></button>
+    
+</div>

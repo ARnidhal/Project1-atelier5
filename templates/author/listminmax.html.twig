@@ -1,0 +1,29 @@
+
+
+<h1> List Of Authors </h1>
+<table border="2">
+    <tr>
+    
+    <td>Id</td>
+    <td>username</td>
+    <td>email</td>
+    <th>nb_books</th>
+    
+    </tr>
+    
+    {%for a in tab %}
+    <tr>
+    <td>{{a.id}}</td>
+    <td>{{a.username}}</td>
+    <td>{{a.email}}</td>
+    <td>{{a.Nbrbooks}}</td>
+    <td><a href="{{path('editauthor',{'id':a.id})}}">edit</a></td>
+                <td><a href="{{path('deleteauthor',{'id':a.id})}}">delete</a></td>
+    
+    </tr>
+    {% endfor %}
+    
+    </table>
+    <button><a href="{{ path('addformauthor') }}">add author</a></button>
+        
+    <button><a href="{{ path('minmax') }}">recherche Min Max</a></button>
